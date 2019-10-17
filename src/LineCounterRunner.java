@@ -3,16 +3,23 @@
 //Name -
 
 import java.util.Scanner;
-import static java.lang.System.*;  
+import static java.lang.System.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;  
 
 public class LineCounterRunner
 {
    public static void main( String args[] )
    {	
-	   Scanner scan = new Scanner(System.in);
+	   File inputFile = new File("Accounts.txt");
+	   try {
+		Scanner fileIn = new Scanner(inputFile);
+	} catch (FileNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 	   
-	   System.out.println("Enter a group of numbers");
-	   String line = scan.nextLine();
-	   LineCounter lc = new LineCounter(line);
+	   LineCounter lc = new LineCounter();
 	}
 }
