@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name -Clara
 
 import java.util.Scanner;
 import static java.lang.System.*;
@@ -16,10 +16,12 @@ public class LineCounter
 
    public LineCounter(String s)
    {
+	   this.line = s;
    }
 
 	public void setLine(String s)
 	{
+		
 	}
 
 	public int getCount()
