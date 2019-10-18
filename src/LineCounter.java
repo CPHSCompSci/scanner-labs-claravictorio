@@ -29,22 +29,14 @@ public class LineCounter
 
 	public int getCount()
 	{
-		/*int count=0;
-		File inputFile = new File("LineCounter.txt");
-		   try {
-			Scanner fileIn = new Scanner(inputFile);
-			while (fileIn.hasNextInt())
-			{
-				fileIn.nextInt();
-				count++;
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+		int count = 0;
+		Scanner chopper = new Scanner(line);
+		while (chopper.hasNextInt())
+		{
+			chopper.nextInt();
+			count++;
 		}
-		return count;*/
-		
-		String[] nums = line.split(" ");
-		return nums.length;
+		return count;
 	}
 
 	public String getLine()

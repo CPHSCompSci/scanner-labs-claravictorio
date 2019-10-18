@@ -16,6 +16,7 @@ public class OddEvenCounter
 
    public OddEvenCounter(String s)
    {
+	   this.line = s;
    }
 
 	public void setLine(String s)
@@ -24,29 +25,30 @@ public class OddEvenCounter
 
 	public int getEvenCount()
 	{
-		int count= 0;
+		int count = 0;
+		Scanner chopper = new Scanner(line);
+		while (chopper.hasNextInt())
+		{
+			if (chopper.nextInt() % 2 == 0)
+				count++;
+		}
 		return count;
 	}
 
 	public int getOddCount()
 	{
-		int count=0;
-		File inputFile = new File("LineCounter.txt");
-		   try {
-			Scanner fileIn = new Scanner(inputFile);
-			while (fileIn.hasNextInt())
-			{
-				if (fileIn.nextInt() % 2 == 1);
+		int count = 0;
+		Scanner chopper = new Scanner(line);
+		while (chopper.hasNextInt())
+		{
+			if (chopper.nextInt() % 2 == 1)
 				count++;
-			}
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
 		}
 		return count;
 	}
 
 	public String toString( )
 	{
-		return "";
+		return this.line;
 	}
 }

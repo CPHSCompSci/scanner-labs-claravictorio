@@ -15,6 +15,7 @@ public class LineCounterRunner
 	   File inputFile = new File("LineCounter.txt");
 	   try {
 			Scanner fileIn = new Scanner(inputFile);
+			System.out.println("LineCounter");
 			while(fileIn.hasNextLine())
 			{
 				LineCounter lc = new LineCounter(fileIn.nextLine());
