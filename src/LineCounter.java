@@ -5,13 +5,16 @@
 import java.util.Scanner;
 import static java.lang.System.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+
 public class LineCounter
 {
    private String line;
 
    public LineCounter()
    {
-		setLine("");
+		
    }
 
    public LineCounter(String s)
@@ -21,18 +24,33 @@ public class LineCounter
 
 	public void setLine(String s)
 	{
-		
+		this.line = s;
 	}
 
 	public int getCount()
 	{
-		int count=0;	
-		return count;
+		/*int count=0;
+		File inputFile = new File("LineCounter.txt");
+		   try {
+			Scanner fileIn = new Scanner(inputFile);
+			while (fileIn.hasNextInt())
+			{
+				fileIn.nextInt();
+				count++;
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return count;*/
+		
+		String[] nums = line.split(" ");
+		return nums.length;
 	}
 
 	public String getLine()
 	{
-		return "";
+		
+		return this.line;
 	}
 
 	public String toString()

@@ -12,14 +12,19 @@ public class LineCounterRunner
 {
    public static void main( String args[] )
    {	
-	   File inputFile = new File("Accounts.txt");
+	   File inputFile = new File("LineCounter.txt");
 	   try {
-		Scanner fileIn = new Scanner(inputFile);
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+			Scanner fileIn = new Scanner(inputFile);
+			while(fileIn.hasNextLine())
+			{
+				LineCounter lc = new LineCounter(fileIn.nextLine());
+				System.out.println(lc.toString());
+				System.out.println("count = " + lc.getCount() + "\n");
+			}
+		}
+	   catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	   
-	   LineCounter lc = new LineCounter();
 	}
 }

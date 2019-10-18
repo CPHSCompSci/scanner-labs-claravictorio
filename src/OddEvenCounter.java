@@ -4,6 +4,7 @@
 
 import java.util.Scanner;
 import static java.lang.System.*;
+import java.io.*;
 
 public class OddEvenCounter
 {
@@ -29,7 +30,18 @@ public class OddEvenCounter
 
 	public int getOddCount()
 	{
-		int count= 0;
+		int count=0;
+		File inputFile = new File("LineCounter.txt");
+		   try {
+			Scanner fileIn = new Scanner(inputFile);
+			while (fileIn.hasNextInt())
+			{
+				if (fileIn.nextInt() % 2 == 1);
+				count++;
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 		return count;
 	}
 
