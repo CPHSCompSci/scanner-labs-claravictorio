@@ -10,22 +10,18 @@ import java.io.FileNotFoundException;
 
 public class LineCounterRunner
 {
-   public static void main( String args[] )
-   {	
-	   File inputFile = new File("LineCounter.txt");
-	   try {
-			Scanner fileIn = new Scanner(inputFile);
-			System.out.println("LineCounter");
-			while(fileIn.hasNextLine())
-			{
-				LineCounter lc = new LineCounter(fileIn.nextLine());
-				System.out.println(lc.toString());
-				System.out.println("count = " + lc.getCount() + "\n");
-			}
-		}
-	   catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
+   public static void main( String args[] ) throws FileNotFoundException
+   {		   
+	   Scanner scan = new Scanner(new File("LineCounter.txt"));
+	   
+	   while (scan.hasNextLine())
+	   {
+		   String line = scan.nextLine();
+		   LineCounter lc = new LineCounter(line);
+		   
+		   System.out.println(line);
+		   System.out.println(lc);
+	   }
 	   
 	}
 }

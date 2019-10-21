@@ -16,11 +16,12 @@ public class OddEvenCounter
 
    public OddEvenCounter(String s)
    {
-	   this.line = s;
+	   setLine(s);
    }
 
 	public void setLine(String s)
 	{
+		this.line = s;
 	}
 
 	public int getEvenCount()
@@ -49,6 +50,6 @@ public class OddEvenCounter
 
 	public String toString( )
 	{
-		return this.line;
+		return "even count = " + getEvenCount() + "\nodd count = " + getOddCount();
 	}
 }

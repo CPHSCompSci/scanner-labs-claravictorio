@@ -18,11 +18,10 @@ public class OddEvenCounterRunner
 			System.out.println("OddEvenCounter");
 			while(fileIn.hasNextLine())
 			{
-				OddEvenCounter oec = new OddEvenCounter(fileIn.nextLine());
-				System.out.println(oec.toString());
-				System.out.println("even count = " + oec.getEvenCount());
-				System.out.println("odd count = " + oec.getOddCount() + "\n");
-
+				String line = fileIn.nextLine();
+				OddEvenCounter oec = new OddEvenCounter(line);
+				System.out.println(line);
+				System.out.println(oec);
 			}
 		}
 	   catch (FileNotFoundException e) {

@@ -14,12 +14,12 @@ public class LineCounter
 
    public LineCounter()
    {
-		
+	   setLine("");
    }
 
    public LineCounter(String s)
    {
-	   this.line = s;
+	   setLine(s);
    }
 
 	public void setLine(String s)
@@ -42,11 +42,11 @@ public class LineCounter
 	public String getLine()
 	{
 		
-		return this.line;
+		return line;
 	}
 
 	public String toString()
 	{
-		return getLine();
+		return "count = " + getCount();
 	}
 }
